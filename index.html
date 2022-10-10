@@ -100,13 +100,18 @@
 
             <section class="todo-app__actions-bar">
                 <footer class="todo-app__footer">
-                    <span class="items-left" aria-label="Tasks left">3 items left</span>
-                    <input type="radio" id="all" name = "todo-app__footer button" value="All">
-                    <label for="all">All</label>
-                    <input type="radio" id="active" name = "todo-app__footer button" value="Active">
-                    <label for="active">Active</label>
-                    <input type="radio" id="completed" name = "todo-app__footer button" value="Completed">	
-                    <label for="completed">Completed</label>
+                    <span class="todo-app__footer items-left" aria-label="Tasks left">
+                        3 items left
+                    </span>
+
+                    <span class="todo-app__footer filter" aria-label="Filter">
+                        <input type="radio" id="all" class = "todo-app__footer button" name="filter button" value="All">
+                        <label for="all">All</label>
+                        <input type="radio" id="active" class = "todo-app__footer button" name="filter button" value="Active">
+                        <label for="active">Active</label>
+                        <input type="radio" id="completed" class = "todo-app__footer button" name="filter button" value="Completed">	
+                        <label for="completed">Completed</label>
+                    </span>
                  </footer>
             </section>
            
