@@ -104,13 +104,17 @@
                         3 items left
                     </span>
 
-                    <span class="todo-app__footer filter" aria-label="Filter">
-                        <input type="radio" id="all" class = "todo-app__footer button" name="filter button" value="All">
+                    <span class="todo-app__footer filter" role="status" aria-label="Filter">
+                        <input type="radio" id="all" class = "todo-app__footer button" name="filter" value="All">
                         <label for="all">All</label>
-                        <input type="radio" id="active" class = "todo-app__footer button" name="filter button" value="Active">
+                        <input type="radio" id="active" class = "todo-app__footer button" name="filter" value="Active">
                         <label for="active">Active</label>
-                        <input type="radio" id="completed" class = "todo-app__footer button" name="filter button" value="Completed">	
+                        <input type="radio" id="completed" class = "todo-app__footer button" name="filter" value="Completed">	
                         <label for="completed">Completed</label>
+                    </span>
+
+                    <span class="todo-app__footer clear" role="clear">
+                        <input type="button" class="todo-app__footer clear button" name="Clear completed" value="Clear completed">
                     </span>
                  </footer>
             </section>
