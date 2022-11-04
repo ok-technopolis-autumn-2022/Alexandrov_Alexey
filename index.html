@@ -3,34 +3,36 @@
     <head>
         <meta charset="UTF-8">
         <title>Todos</title>
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <div class="tode-app">
-            <header class = "todo-app__header">
-                <h1>todo</h1>
-            </header>
-
+        <header class = "todo-app__header">
+            <h1>todo</h1>
+        </header>
+        <div class="todo-app">
             <main class="todo-app__frame">
                 <section class="todo-app__main-contorls">
-                    <input type="button" title="Select all tasks">
+                    <input type="button" class="todo-app__button_select_all" title="Select all tasks">
                     <input type="text"
-                           name="todo-app__add-text"
+                           class="todo-app__add-text"
                            placeholder="What needs to be done?"
                            aria-label="Task text"
                     >
                 </section>
-
                 <section class="todo-app__tasks">
-                    <ul class="tode-app__task-list tasks">
+                    <ul class="todo-app__task-list tasks">
                         <li class="todo-app__task-item task-item">
                             <div class="task-item__view">
-                                <input
-                                type="checkbox"
-                                class="task-item__status"
-                                aria-label="Comleted task:HTML"
-                                />
+                                <label>
+                                    <input
+                                    type="checkbox"
+                                    class="task-item__status"
+                                    aria-label="Comleted task:HTML"
+                                    />
+                                    <span class="task-item__status-replica"></span>
+                                </label>    
                                 <span class="task-item__text">HTML</span>
-                                <button class="task-item__delete">Delete task</button>
+                                <button class="task-item__delete"></button>
                             </div>
                             <div class="task-item__edit" hidden="hidden">
                                 <input
@@ -42,13 +44,16 @@
                         </li>
                         <li class="todo-app__task-item task-item">
                             <div class="task-item__view">
-                                <input
-                                type="checkbox"
-                                class="task-item__status"
-                                aria-label="Comleted task:CSS"
-                                />
-                                <span class="task-item__text">HTML</span>
-                                <button class="task-item__delete">Delete task</button>
+                                <label>
+                                    <input
+                                    type="checkbox"
+                                    class="task-item__status"
+                                    aria-label="Comleted task:CSS"
+                                    />
+                                    <span class="task-item__status-replica"></span>
+                                </label>  
+                                <span class="task-item__text">CSS</span>
+                                <button class="task-item__delete"></button>
                             </div>
                             <div class="task-item__edit" hidden="hidden">
                                 <input
@@ -58,67 +63,40 @@
                                 aria-label="Edit task: CSS"
                             </div>
                         </li>
-                        <li class="todo-app__task-item task-item">
-                            <div class="task-item__view">
-                                <input
-                                type="checkbox"
-                                class="task-item__status"
-                                aria-label="Comleted task:JS"
-                                />
-                                <span class="task-item__text">HTML</span>
-                                <button class="task-item__delete">Delete task</button>
-                            </div>
-                            <div class="task-item__edit" hidden="hidden">
-                                <input
-                                type="text"
-                                class="task-item__input"
-                                value="JS"
-                                aria-label="Edit task: JS"
-                            </div>
-                        </li>
-                        <li class="todo-app__task-item task-item">
-                            <div class="task-item__view">
-                                <input
-                                type="checkbox"
-                                class="task-item__status"
-                                aria-label="Comleted task:JS tools"
-                                />
-                                <span class="task-item__text">HTML</span>
-                                <button class="task-item__delete">Delete task</button>
-                            </div>
-                            <div class="task-item__edit" hidden="hidden">
-                                <input
-                                type="text"
-                                class="task-item__input"
-                                value="JS tools"
-                                aria-label="Edit task: JS tools"
-                            </div>
-                        </li>
+                        
                     </ul>
                 </section>
             </main>
 
-            <section class="todo-app__actions-bar">
+
                 <footer class="todo-app__footer">
                     <span class="todo-app__footer items-left" aria-label="Tasks left">
                         3 items left
                     </span>
 
                     <span class="todo-app__footer filter" role="status" aria-label="Filter">
-                        <input type="radio" id="all" class = "todo-app__footer button" name="filter" value="All">
-                        <label for="all">All</label>
-                        <input type="radio" id="active" class = "todo-app__footer button" name="filter" value="Active">
-                        <label for="active">Active</label>
-                        <input type="radio" id="completed" class = "todo-app__footer button" name="filter" value="Completed">	
-                        <label for="completed">Completed</label>
+                        <label for="all" class="todo-app__footer label">
+                            <input type="radio" id="all" class = "todo-app__footer button" name="filter" value="All" checked>
+                            <span class="todo-app__footer-radio-replica">All</span>
+                        </label>
+ 
+                        <label for="active" class="todo-app__footer label">
+                            <input type="radio" id="active" class = "todo-app__footer button" name="filter" value="Active">
+                            <span class="todo-app__footer-radio-replica">Active</span>
+                        </label>
+
+                        <label for="completed" class="todo-app__footer label">
+                            <input type="radio" id="completed" class ="todo-app__footer button" name="filter" value="Completed">	
+                            <span class="todo-app__footer-radio-replica">Completed</span>
+                        </label>
                     </span>
 
                     <span class="todo-app__footer clear" role="clear">
-                        <input type="button" class="todo-app__footer clear button" name="Clear completed" value="Clear completed">
+                        <input type="button" class="todo-app__footer clear_button" name="Clear completed" value="Clear completed">
                     </span>
                  </footer>
-            </section>
-           
         </div>
+        <div class="todo-app_bottom-one"></div>
+        <div class="todo-app_bottom-two"></div>
     </body>
 </html>
