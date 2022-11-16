@@ -6,6 +6,7 @@ padding: 0px;
 }
 
 body{
+    min-width: 600px;
     display: flex;
     flex-direction: column;
     background-color: #9e9e9e24;
@@ -38,30 +39,24 @@ h1{
     width: 70px;
 }
 
-button[class="task-item__delete"]{
-    width: 20px;
-    height: 20px;
+.task-item__delete{
+    background-image: url("../images/close.png");
+    background-repeat: no-repeat;
+    background-position: center;    
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 10px;
-    border: 0px #000 solid;
-    background-color: #fff;
+    border: none;    
+    background-color: #FFFFFF;
+    visibility: hidden;
 }
 
-
-.task-item:hover > .task-item__delete {
-    background-image: url(../images/close.png);
-    /* background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    border: 0px #000 solid;
-    background-color: #fff;
-    width: 20px;
-    height: 20px;
-    align-self: center;
-    margin: 11px;
-    box-shadow: none; */
+.task-item:hover .task-item__delete {
+    background-color: #FAFAFA;
+    visibility: visible;
 } 
 
 .task-item__status-replica{
@@ -79,7 +74,6 @@ button[class="task-item__delete"]{
 
 input[type="checkbox"]:checked + .task-item__status-replica{
     background-image: url("../images/completed.png");
-    
     border-color: #5DC2AF;
     background-size: 24px;
     background-repeat: no-repeat;
@@ -104,7 +98,7 @@ input[type="checkbox"]{
 .todo-app__main-contorls{
     height: 66px;
     display: flex;
-    box-shadow: 0px -1px 0px 0px #e6e6e6 inset;
+    border-bottom: 1px inset #e6e6e6;
 }
 
 .todo-app__header{
@@ -120,12 +114,21 @@ input[type="checkbox"]{
 .todo-app__footer{
     font-family: Roboto, sans-serif;
     color: #888888;
-    box-shadow: 0px 1px 0px 0px #e6e6e6 inset;
+    border-top: 1px solid #E6E6E6;
     height: 40px;
     align-items: center;
     display: flex;
     justify-content: space-between;
     font-size: 14px;
+}
+
+.label{
+    margin: 1px;
+    border: none;
+}
+
+.filter{
+    border:none;
 }
 
 .task-item__view{
@@ -134,7 +137,7 @@ input[type="checkbox"]{
 
 .task-item__text{
     color: #666666;
-    margin-left: 4%;
+    margin-left: 5px;
     font-size: 24px;
     align-self: center;
 }
@@ -146,9 +149,9 @@ input[type="checkbox"]{
 
 .task-item{
     height: 60px;
-    box-shadow: 0px -1px 0px 0px #e6e6e6 inset;
     display: flex;
     position: relative;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 input[type="radio"] {
@@ -156,12 +159,12 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked +  .todo-app__footer-radio-replica{
-    border: 1px solid #EBDFDF;
+    outline: 1px solid #EBDFDF;
 }
 
 .todo-app__footer-radio-replica{
-    padding: 2px 5px;
-    border-radius: 5%;
+    padding: 2px 8px;
+    border-radius: 2px;
 }
 
 .todo-app_bottom-one{
@@ -177,7 +180,7 @@ input[type="radio"]:checked +  .todo-app__footer-radio-replica{
     box-shadow: 0px 2px 4px 0px #00000033;
     height: 5px;
     background-color: #FFFFFF;
-    z-index: -1;
+    z-index: -2;
 }
 
 .items-left{
