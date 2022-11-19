@@ -39,6 +39,14 @@ h1{
     width: 70px;
 }
 
+input[class=todo-app__button_select_all]:focus{
+    border: 1px solid #000000;
+}
+
+input[type="checkbox"]:focus + .task-item__status-replica {
+    border: 1px solid #CCCCCC;
+}
+
 .task-item__delete{
     background-image: url("../images/close.png");
     background-repeat: no-repeat;
@@ -51,12 +59,13 @@ h1{
     right: 10px;
     border: none;    
     background-color: #FFFFFF;
-    visibility: hidden;
+    opacity: 0;
 }
 
-.task-item:hover .task-item__delete {
+.task-item:hover .task-item__delete,
+.task-item__delete:focus {
     background-color: #FAFAFA;
-    visibility: visible;
+    opacity: 100;
 } 
 
 .task-item__status-replica{
@@ -160,6 +169,10 @@ input[type="radio"] {
 
 input[type="radio"]:checked +  .todo-app__footer-radio-replica{
     outline: 1px solid #EBDFDF;
+}
+
+input[type="radio"]:focus + .todo-app__footer-radio-replica {
+    border: 1px solid #000000;
 }
 
 .todo-app__footer-radio-replica{
