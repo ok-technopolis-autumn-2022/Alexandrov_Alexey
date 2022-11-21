@@ -142,13 +142,17 @@ input[type="checkbox"]{
 
 .task-item__view{
     display: flex;
+    align-items: center;
 }
 
+
 .task-item__text{
-    color: #666666;
     margin-left: 5px;
+    padding: 10px 0;
+    color: #666666;
     font-size: 24px;
-    align-self: center;
+    word-break: break-word;
+    padding-right: 50px;
 }
 
 .clear_button{
@@ -157,7 +161,7 @@ input[type="checkbox"]{
 }
 
 .task-item{
-    height: 60px;
+    min-height: 60px;
     display: flex;
     position: relative;
     border-bottom: 1px solid #e6e6e6;
