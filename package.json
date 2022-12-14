@@ -4,7 +4,7 @@
   "description": "Template HTML",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "open-app": "parcel index.html --open"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/ok-technopolis-autumn-2022/Alexandrov_Alexey#readme",
   "dependencies": {
+    "parcel-bundler": "^1.12.5",
     "sass": "^1.56.2"
+  },
+  "devDependencies": {
+    "cssnano": "^5.1.14",
+    "postcss": "^8.4.20"
   }
 }

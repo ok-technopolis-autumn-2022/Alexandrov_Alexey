@@ -1,0 +1,14 @@
+@mixin border($color){
+    border: 1px solid $color;
+}
+
+@mixin image($bck-image,$bck-repeat,$bck-position){
+    background-image: $bck-image;
+    background-repeat: $bck-repeat;
+    background-position: $bck-position;    
+}
+
+@mixin set_width_and_height($width,$height){
+    width:$width ;
+    height: $height;
+}
