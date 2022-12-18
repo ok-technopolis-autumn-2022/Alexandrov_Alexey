@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+@import "content.scss";
+@import "vars.scss";
 
 *{
 margin: 0px;
@@ -9,8 +11,8 @@ body{
     min-width: 600px;
     display: flex;
     flex-direction: column;
-    background-color: #9e9e9e24;
-    font-family: 'Roboto',sans-serif;
+    background-color: $color_background;
+    font-family: $font_family;
     margin: 50px;
     align-items: center;
 }
@@ -21,8 +23,8 @@ h1{
 
 .todo-app{
     width: 560px;
-    background-color: #ffffff; 
-    box-shadow: 0px 2px 4px rgb(0 0 0 / 20%);
+    background-color: $color_white; 
+    box-shadow: $box-shadow;
 } 
 
 .todo-app__frame{
@@ -30,63 +32,55 @@ h1{
 }
 
 .todo-app__button_select_all{
-    background-image: url("../images/select-all.png");
+    @include image(url("../images/select-all.png"), no-repeat,center );
     background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
     border:none;
     height: 100%;
     width: 70px;
 }
 
 input[class=todo-app__button_select_all]:focus{
-    border: 1px solid #000000;
+    @include border($color_black);
 }
 
 input[type="checkbox"]:focus + .task-item__status-replica {
-    border: 1px solid #CCCCCC;
+    @include border($color_grey_border);
 }
 
 .task-item__delete{
-    background-image: url("../images/close.png");
-    background-repeat: no-repeat;
-    background-position: center;    
-    width: 40px;
-    height: 40px;
+    @include image(url("../images/close.png"), no-repeat,center );
+    @include set_width_and_height(40px,40px );
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     right: 10px;
     border: none;    
-    background-color: #FFFFFF;
+    background-color: $color_white;
     opacity: 0;
 }
 
 .task-item:hover .task-item__delete,
 .task-item__delete:focus {
-    background-color: #FAFAFA;
+    background-color: $color_grey_task_item;
     opacity: 100;
 } 
 
 .task-item__status-replica{
     margin: 10px;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #E6E6E6;
+    @include set_width_and_height(40px,40px );
+    @include border($color_grey_main);
     display: inline-block;
     border-radius: 20px;
 }
 
 .task-item:hover {
-    background: #FAFAFA;
+    background: $color_grey_task_item;
 }
 
 input[type="checkbox"]:checked + .task-item__status-replica{
-    background-image: url("../images/completed.png");
-    border-color: #5DC2AF;
+    border-color: $color_izumrud;
     background-size: 24px;
-    background-repeat: no-repeat;
-    background-position: center;
+    @include image(url("../images/completed.png"), no-repeat,center );
 }
 
 input[type="checkbox"]{
@@ -96,23 +90,22 @@ input[type="checkbox"]{
 
 .todo-app__add-text{
      border: none; 
-    width: 100%;
-    font-family: 'Roboto';
+    font-family: $font_family;
     font-style: italic;
-    font-size: 24px;
-    height: 99%;
+    font-size: $font_size_24px;
+    @include set_width_and_height(100%,99%);
     letter-spacing: -0.6px;
 }
 
 .todo-app__main-contorls{
     height: 66px;
     display: flex;
-    border-bottom: 1px inset #e6e6e6;
+    border-bottom: 1px inset $color_grey_main;
 }
 
 .todo-app__header{
-    color: #CCCCCC;
-    font-size: 50px;
+    color: $color_grey_border;
+    font-size: $font_size_50px;
 }
 
 .todo-app__frame{
@@ -121,14 +114,14 @@ input[type="checkbox"]{
 } 
 
 .todo-app__footer{
-    font-family: Roboto, sans-serif;
-    color: #888888;
-    border-top: 1px solid #E6E6E6;
+    font-family: $font_family;
+    color: $color_footer_text;
+    border-top: 1px solid $color_grey_main;
     height: 40px;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: $font_size_14px;
 }
 
 .label{
@@ -145,12 +138,11 @@ input[type="checkbox"]{
     align-items: center;
 }
 
-
 .task-item__text{
     margin-left: 5px;
     padding: 10px 0;
-    color: #666666;
-    font-size: 24px;
+    color: $color_task_text;
+    font-size:$font_size_24px;
     word-break: break-word;
     padding-right: 50px;
 }
@@ -164,7 +156,7 @@ input[type="checkbox"]{
     min-height: 60px;
     display: flex;
     position: relative;
-    border-bottom: 1px solid #e6e6e6;
+    border-bottom: 1px solid $color_grey_main;
 }
 
 input[type="radio"] {
@@ -172,11 +164,11 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked +  .todo-app__footer-radio-replica{
-    outline: 1px solid #EBDFDF;
+    outline: 1px solid $color_footer_radio_replica_border;
 }
 
 input[type="radio"]:focus + .todo-app__footer-radio-replica {
-    border: 1px solid #000000;
+    @include border($color_black);
 }
 
 .todo-app__footer-radio-replica{
@@ -185,18 +177,17 @@ input[type="radio"]:focus + .todo-app__footer-radio-replica {
 }
 
 .todo-app_bottom-one{
-    width: 550px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
-    height: 5px;
-    background-color: rgb(255, 255, 255);
+    @include set_width_and_height(550px,5px );
+    box-shadow: $box-shadow;
+    background-color: $color_white;
     z-index: -1;
 }
 
 .todo-app_bottom-two{
     width: 538px;
-    box-shadow: 0px 2px 4px 0px #00000033;
+    box-shadow:$box-shadow;
     height: 5px;
-    background-color: #FFFFFF;
+    background-color: $color_white;
     z-index: -2;
 }
 
